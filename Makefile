@@ -1,7 +1,7 @@
 CXX=g++
 INCLUDE=-I include
-CPPFLAGS=-std=c++11 -O3
-PROJ_NAME=Giga.a
+CPPFLAGS=-std=c++11 -O3 -Wall
+PROJ_NAME=libGiga.a
 OBJECTS= build/InputPin.o build/OutputPin.o build/Pin.o build/Utils.o
 
 AR=ar
