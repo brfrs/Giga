@@ -2,9 +2,7 @@
 
 using std::ofstream;
 
-using namespace Giga::detail;
-
-bool directoryAccessible(const std::string& path) 
+bool Giga::detail::directoryAccessible(const std::string& path) 
 {
     struct stat status;
     if (stat(path.c_str(), &status) == 0) 
@@ -13,7 +11,7 @@ bool directoryAccessible(const std::string& path)
     return false;
 }
 
-bool fileAccessible(const std::string& path)
+bool Giga::detail::fileAccessible(const std::string& path)
 {
     struct stat status;
     if (stat(path.c_str(), &status) == 0) 
@@ -22,7 +20,7 @@ bool fileAccessible(const std::string& path)
     return false;
 }
 
-void write(const std::string& path, const std::string& out)
+void Giga::detail::write(const std::string& path, const std::string& out)
 {
     ofstream outfile(path);
     outfile << out;
