@@ -16,7 +16,7 @@ build/InputPin.o: src/InputPin.cpp include/InputPin.h include/Pin.h include/Util
 build/OutputPin.o: src/OutputPin.cpp include/OutputPin.h include/Pin.h include/Utils.h
 	$(CXX) $(INCLUDE) $(CPPFLAGS) -c -o $@ $<
 
-build/Pin.o: src/Pin.cpp include/Pin.h include/Utils.h
+build/Pin.o: src/Pin.cpp include/Pin.h include/Utils.h include/GPIOError.h
 	$(CXX) $(INCLUDE) $(CPPFLAGS) -c -o $@ $<
 
 build/Utils.o: src/Utils.cpp include/Utils.h

@@ -2,6 +2,7 @@
 #define PIN_H
 
 #include "Utils.h"
+#include "GPIOError.h"
 
 #include <string>
 

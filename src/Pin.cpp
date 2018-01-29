@@ -14,9 +14,10 @@ Pin::Pin(Giga::PinNum num)
     gpioNum = num;
     gpioPath = GPIO_PIN_PATH_PREFIX + to_string(gpioNum);
 
-    if (detail::directoryAccessible(GPIO_EXPORT_PATH)) {
+    if (detail::fileAccessible(GPIO_EXPORT_PATH))
         detail::write(GPIO_EXPORT_PATH, to_string(gpioNum));
-    }
+    else
+        throw Giga::GPIOError("Could not access the /sys/class/gpio/export");
 }
 
 string Pin::getPath() const
